@@ -34,7 +34,6 @@ jobs:
           nc -vz -w 5 k8s-master-noble 6443
       - name: Configure kubectl
         run: |
-          - name: Configure kubectl
           mkdir -p ~/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 -d > ~/.kube/config
           chmod 600 ~/.kube/config
